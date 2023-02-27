@@ -1,0 +1,25 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: postgres
+  namespace: flux-system
+spec:
+  interval: 60m0s
+  path: ./kustomize/postgres
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: mytbedge
+  targetNamespace: flux-system
+  patches:
+    - patch: |-
+        apiVersion: autoscaling/v2beta2
+        kind: HorizontalPodAutoscaler
+        metadata:
+          name: postgres
+        spec:
+          minReplicas: 1
+      target:
+        name: podinfo
+        kind: HorizontalPodAutoscaler
