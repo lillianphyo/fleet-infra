@@ -5,7 +5,7 @@ metadata:
   name: postgres
   namespace: flux-system
 spec:
-  interval: 60s
+  interval: 30m0s
   path: ./kustomize/postgres
   prune: true
   sourceRef:
