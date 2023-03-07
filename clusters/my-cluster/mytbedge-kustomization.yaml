@@ -3,7 +3,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
   name: mytbedge
-  namespace: flux-system
+  namespace: regiona
 spec:
   interval: 30m0s
   path: ./kustomize/edge
@@ -11,7 +11,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: mytbedge
-  targetNamespace: flux-system
+  targetNamespace: regiona
   patches:
     - patch: |-
         apiVersion: autoscaling/v2beta2

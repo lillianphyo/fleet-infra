@@ -3,7 +3,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
   name: mytbedge
-  namespace: flux-system
+  namespace: regiona
 spec:
   interval: 30s
   ref:
