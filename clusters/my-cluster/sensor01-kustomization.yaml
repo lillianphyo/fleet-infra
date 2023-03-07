@@ -6,7 +6,7 @@ metadata:
   namespace: regionb
 spec:
   interval: 30m0s
-  path: ./kustomize/postgres
+  path: ./kustomize/sensor01
   prune: true
   sourceRef:
     kind: GitRepository
