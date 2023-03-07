@@ -2,8 +2,8 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: postgres
-  namespace: regiona
+  name: sensor01
+  namespace: regionb
 spec:
   interval: 30m0s
   path: ./kustomize/postgres
@@ -11,13 +11,13 @@ spec:
   sourceRef:
     kind: GitRepository
     name: mytbedge
-  targetNamespace: regiona
+  targetNamespace: regionb
   patches:
     - patch: |-
         apiVersion: autoscaling/v2beta2
         kind: HorizontalPodAutoscaler
         metadata:
-          name: postgres
+          name: sensor01
         spec:
           minReplicas: 1
       target:
