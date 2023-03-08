@@ -12,14 +12,14 @@ spec:
     kind: GitRepository
     name: mytbedge
   targetNamespace: regiona
-  patches:
-    - patch: |-
-        apiVersion: autoscaling/v2beta2
-        kind: HorizontalPodAutoscaler
-        metadata:
-          name: postgres
-        spec:
-          minReplicas: 1
-      target:
-        name: podinfo
-        kind: HorizontalPodAutoscaler
+  #patches:
+  #  - patch: |-
+  #      apiVersion: autoscaling/v2beta2
+  #      kind: HorizontalPodAutoscaler
+  #      metadata:
+  #        name: postgres
+  #      spec:
+  #        minReplicas: 1
+  #    target:
+  #      name: podinfo
+  #      kind: HorizontalPodAutoscaler
