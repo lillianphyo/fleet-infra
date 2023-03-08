@@ -1,0 +1,27 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: cloud-sensor17
+  namespace: flux-system
+  labels:
+    layer: cloud
+spec:
+  interval: 30m0s
+  path: ./kustomize/cloud-sensor17
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: mytbedge
+  targetNamespace: regionb
+  #patches:
+  #  - patch: |-
+  #      apiVersion: autoscaling/v2beta2
+  #      kind: HorizontalPodAutoscaler
+  #      metadata:
+  #        name: sensor17
+  #      spec:
+  #        minReplicas: 1
+  #    target:
+  #      name: podinfo
+  #      kind: HorizontalPodAutoscaler
