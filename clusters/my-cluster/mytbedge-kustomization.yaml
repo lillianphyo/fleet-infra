@@ -12,15 +12,6 @@ spec:
     kind: GitRepository
     name: mytbedge
   targetNamespace: regiona
-  affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: geol
-            operator: In
-            values:
-            - regiona
   patches:
     - patch: |-
         apiVersion: autoscaling/v2beta2
